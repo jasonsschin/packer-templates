@@ -116,6 +116,7 @@
                 <NetworkLocation>Work</NetworkLocation>
                 <ProtectYourPC>1</ProtectYourPC>
             </OOBE>
+            <TimeZone>AUS Eastern Standard Time</TimeZone>
             <AutoLogon>
                 <Password>
                     <Value>vagrant</Value>
