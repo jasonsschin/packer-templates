@@ -47,3 +47,7 @@ net start winrm
 
 Get-WmiObject -Class Win32_UserAccount -Filter "name = 'vagrant'" | Set-WmiInstance -Arguments @{PasswordExpires = 0 }
 Enable-WinRM
+
+# Disable UAC 
+Set-ItemProperty -Path “HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System” -Name “ConsentPromptBehaviorAdmin” -Value “0”; Set-ItemProperty -Path “HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System” -Name “ConsentPromptBehaviorUser” -Value “0”; Set-ItemProperty -Path “HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System” -Name “EnableLUA” -Value “1”; 
+Set-ItemProperty -Path “HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System” -Name “PromptOnSecureDesktop” -Value “0”
